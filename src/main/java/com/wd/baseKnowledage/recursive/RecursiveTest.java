@@ -35,15 +35,19 @@ public class RecursiveTest {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		RecursiveVO recursiveVO = getRecursive();
-		Gson gson = new Gson();
-		String json = gson.toJson(recursiveVO);
-		Map fromJson = gson.fromJson(json, Map.class);
-		System.out.println(fromJson);
-		String [] keys = {"a5[0]","c1"}; //a4.b1
+//		RecursiveVO recursiveVO = getRecursive();
+//		Gson gson = new Gson();
+//		String json = gson.toJson(recursiveVO);
+//		Map fromJson = gson.fromJson(json, Map.class);
+//		System.out.println(fromJson);
+//		String [] keys = {"a4","b1"}; //a4.b1
+//		
+//		String resultByRecursive = getResultMapTypeByRecursive(fromJson, keys,0);
+//		System.out.println(resultByRecursive);
 		
-		String resultByRecursive = getResultMapTypeByRecursive(fromJson, keys,0);
-		System.out.println(resultByRecursive);
+		List<String> list = extractMessageByRegular("当前交换机端口数据端口值:${log.assetGuid},,资产guid:${log.ifEntryList[0].ifIndex}", "\\$\\{(.|\\r\\n)+?}");
+		System.out.println(list);
+		
 		
 	}
 	

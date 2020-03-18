@@ -1,6 +1,7 @@
 package com.wd.baseKnowledage.proxy.cglibProxy;
 
 import com.wd.baseKnowledage.proxy.model.User;
+import com.wd.baseKnowledage.proxy.service.UserChildServiceImpl;
 import com.wd.baseKnowledage.proxy.service.UserService;
 import com.wd.baseKnowledage.proxy.service.UserServiceImpl;
 
@@ -15,11 +16,16 @@ import com.wd.baseKnowledage.proxy.service.UserServiceImpl;
 public class CGProxyTest {
 
 	public static void main(String[] args) {
-		Object proxyedObject = new UserServiceImpl();	// 被代理的对象
+		Object proxyedObject = new UserChildServiceImpl();	// 被代理的对象
 		CGProxy cgProxy = new CGProxy(proxyedObject);
 		UserService proxyObject = (UserService) cgProxy.getProxyObject();
+		//Class<?> superclass = proxyObject.getClass().getSuperclass();
 		proxyObject.getUser("123");
 		proxyObject.addUser(new User());
+		
+		System.out.println("----------------------");
+		UserService userChild = new UserChildServiceImpl();
+		userChild.getUser("123");
 	}
 	
 }

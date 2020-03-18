@@ -25,7 +25,7 @@ public class ThreadWay extends Thread {
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		ThreadWay threadWay = new ThreadWay();  //实例化ThreadWay线程
 		threadWay.currentThread().setName("ThreadWay");
 		threadWay.start();

@@ -3,20 +3,20 @@ package com.wd.baseKnowledage.proxy.service;
 import com.wd.baseKnowledage.proxy.model.User;
 
 /**
-* @author wudi
-* @version 创建时间：2018年5月24日 下午11:07:26
-* @ClassName 类名称
-* @Description 类描述
+* @author wudi E-mail:wudi891012@163.com
+* @version 创建时间：2019年10月9日 下午3:52:11
+* 类说明
 */
-public class UserServiceImpl implements UserService {
-
-	private String proxy = "abc";
+public class UserChildServiceImpl extends UserServiceImpl {
+     
+	private String proxy = "abcddd";
 	
-	@Override
-	public void addUser(User user) {
-		System.out.println("add user into database.");
+	
+	private String  getProxy() {
+		return proxy;
 	}
-
+	
+	
 	@Override
 	public User getUser(String id) {
 		User user = new User();
@@ -27,9 +27,5 @@ public class UserServiceImpl implements UserService {
 		String proxy2 = getProxy();
 		System.out.println(proxy2);
 		return user;
-	}
-
-	private String getProxy(){
-		return proxy;
 	}
 }
