@@ -18,6 +18,14 @@ public class LinearLinkedList<T> {
 		this.next = linearLinkedList;
 	}
 	
+	
+	public LinearLinkedList(T t) {
+		this.data = t;
+		this.next = null;
+	}
+	
+	
+	
 	public LinearLinkedList() {
 		
 	}
@@ -108,5 +116,60 @@ public class LinearLinkedList<T> {
 		pNext = pNextNext;
 		p.setNext(pNext);
 	}
+	
+	/**
+	 * 建立带表头结点的单链线性表L（头插法）
+	 * @param linear
+	 * @param n
+	 */
+	public LinearLinkedList<T> insertListHead(LinearLinkedList<T> linear,T data) {
+		LinearLinkedList<T> p = new LinearLinkedList<T>(data);
+		p.setNext(linear.getNext());
+		return p;
+	}
+	
+	/**
+	 * 尾插头
+	 * @param linear
+	 * @param data
+	 * @return
+	 */
+	public LinearLinkedList<T> insertListTail(LinearLinkedList<T> linear,T data) {
+		LinearLinkedList<T> p = new LinearLinkedList<T>(data);
+		LinearLinkedList<T> r = linear; //尾部节点
+		if(linear==null) {
+			LinearLinkedList<T> linearLinkedList = p.getNext();
+			linearLinkedList = linear;
+			return linearLinkedList;
+		}else {
+			while(r.getNext()!=null){
+                r=r.getNext();//p结点始终指向最后一个结点
+            }
+			r.setNext(p);
+			
+		}
+		return linear;
+	}
+	
+	
+	/**
+	 * 将L重置为空表
+	 * @param linear
+	 * @param data
+	 * @return
+	 */
+	public void clearList(LinearLinkedList<T> linear){
+		LinearLinkedList<T> p,q;
+		p = linear.getNext();
+		while(p!=null) {
+            q = p.getNext();
+            p=q;
+		}
+		linear.setNext(null);
+		
+		
+	}
+	
+	
 	
 }
