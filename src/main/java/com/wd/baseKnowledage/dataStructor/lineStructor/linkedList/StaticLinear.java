@@ -31,6 +31,10 @@ public class StaticLinear<T> {
 	}
 	
 	
+	public void listInsert(StaticLinear<T>[] space) {
+		
+	}
+	
 	
 
 	public T getData() {
