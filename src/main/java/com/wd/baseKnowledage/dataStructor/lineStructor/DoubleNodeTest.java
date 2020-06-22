@@ -28,16 +28,14 @@ public class DoubleNodeTest {
 		
 		node3.setPrior(node2);
 		node2.setPrior(node1);
+		doubleNodes = new DoubleNode<String>(node1);
 		
-		//doubleNodes = new DoubleNode<String>(node1);
-		
-		System.out.println(node1);
 	}
 	
      @Test
      public void testInsertDoubleNode(){
-//    	// doubleNodes.insertElem(2, "node4");
-//    	 System.out.println(doubleNodes);
+         doubleNodes.insertElem(2, "node4");
+    	 System.out.println(doubleNodes);
      }
      
      

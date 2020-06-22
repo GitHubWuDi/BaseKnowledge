@@ -1,13 +1,10 @@
 package com.wd.baseKnowledage.dataStructor.lineStructor.linkedList;
 
-import lombok.Data;
-
 /**
  * 双向链表
  * @author Administrator
  *
  */
-@Data
 public class DoubleNode<T> {
 
 	private T data;
@@ -36,7 +33,7 @@ public class DoubleNode<T> {
 	 */
 	public void insertElem(int i,T t) {
 		int j = 1;
-		DoubleNode<T> n,p,s; //n是后继指针，p是前驱指针，s是准备初始化的新节点
+		DoubleNode<T> n,s; //n是后继指针，p是前驱指针，s是准备初始化的新节点
 		n = next.getNext();
 		s = new DoubleNode<T>();
 		s.setData(t);
@@ -54,6 +51,32 @@ public class DoubleNode<T> {
 		//n.getNext().setPrior(s);
 		n.setNext(s);
 	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+
+	public DoubleNode<T> getNext() {
+		return next;
+	}
+
+	public void setNext(DoubleNode<T> next) {
+		this.next = next;
+	}
+
+	public DoubleNode<T> getPrior() {
+		return prior;
+	}
+
+	public void setPrior(DoubleNode<T> prior) {
+		this.prior = prior;
+	}
+	
+	
 	
 	
 }
