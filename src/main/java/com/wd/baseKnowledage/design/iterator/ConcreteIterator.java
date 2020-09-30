@@ -8,7 +8,7 @@ public class ConcreteIterator implements Iterator {
 
 	
 	private ConcreteAggregate concreteAggregate;
-	private int current;
+	private int current=0;
 	
 	public ConcreteIterator(ConcreteAggregate concreteAggregate) {
 		this.concreteAggregate = concreteAggregate;
@@ -23,16 +23,16 @@ public class ConcreteIterator implements Iterator {
 	@Override
 	public Integer next() {
 		Integer ret = null;
-		current++;
 		if(current<concreteAggregate.count()) {
 			ret = concreteAggregate.getList().get(current);
 		}
+		current++;
 		return ret;
 	}
 
 	@Override
 	public boolean isdone() {
-		return current>=concreteAggregate.count()?true:false;
+		return current<concreteAggregate.count()?true:false;
 	}
 
 	@Override
