@@ -11,7 +11,7 @@ import com.wd.baseKnowledage.design.state.Work;
 public class AfternoonState extends State {
 
 	@Override
-	public void writeProgram(Work work) {
+	public void writeProgram(Work work){
 		int hour = work.getHour();
 		if(hour<17) {
 			logger.info("当前时间：：{}点，下午状态还不错，继续努力", hour);
