@@ -39,6 +39,60 @@ public class ReverseTest1 {
 		//链表的头节点指向原来链表的尾节点
 		head.next = cur;
 	}
+	
+	/**
+	 * 递归实现
+	 * @param head
+	 * @return
+	 */
+	public static LNode recursiveReverse(LNode head) {
+		if(head==null||head.next==null) {
+			return head;
+		}else {
+			LNode newhead = recursiveReverse(head.next);
+			//把当前遍历的节点加到后面节点逆序后链表的尾部
+			head.next.next = head;
+			head.next = null;
+			return newhead;
+		}
+	}
+	
+	/**
+	 * 递归实现
+	 * @param head
+	 */
+	public static void reverse2(LNode head) {
+		if(head==null) {
+			return;
+		}
+		LNode firstNode = head.next;
+		LNode newHead = recursiveReverse(firstNode);
+		head.next = newHead;
+	}
+	
+	/**
+	 * 插入法
+	 * @param head
+	 */
+	public static void reverse3(LNode head) {
+		if(head==null||head.next==null) {
+			return ;
+		}else {
+			LNode cur = null;
+			LNode next = null;
+			cur = head.next.next;
+			head.next.next = null;
+			while(cur!=null) {
+				next = cur.next;
+				cur.next = head.next;
+				head.next = cur;
+				cur = next;
+			}
+		}
+	
+	}
+	
+	
 
 	public static void main(String[] args) {
 		LNode head  = new LNode();
@@ -55,7 +109,9 @@ public class ReverseTest1 {
 		System.out.println("逆序前：");
 		dataOutput(head);
 		System.out.println("逆序后：");
-		reverse1(head);
+		//reverse1(head);
+		//reverse2(head);
+		reverse3(head);
 		dataOutput(head);
 	}
 
