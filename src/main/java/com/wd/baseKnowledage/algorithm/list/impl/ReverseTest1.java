@@ -1,5 +1,6 @@
 package com.wd.baseKnowledage.algorithm.list.impl;
 
+import com.wd.baseKnowledage.algorithm.Test;
 import com.wd.baseKnowledage.algorithm.list.model.LNode;
 
 /**
@@ -107,20 +108,15 @@ public class ReverseTest1 {
 			cur = tmp;
 		}
 		System.out.println("逆序前：");
-		dataOutput(head);
+		Test.dataOutputLnode(head);
 		System.out.println("逆序后：");
 		//reverse1(head);
 		//reverse2(head);
 		reverse3(head);
-		dataOutput(head);
+		Test.dataOutputLnode(head);
 	}
 
 	
-	private static void dataOutput(LNode head) {
-		LNode cur;
-		for (cur = head.next; cur!=null; cur = cur.next) {
-			System.out.println(cur.data+"");
-		}
-	}
+	
 	
 }
