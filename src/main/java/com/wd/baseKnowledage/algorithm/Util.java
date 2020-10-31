@@ -21,4 +21,28 @@ public class Util {
 		return head;
 			
 	}
+	
+	
+	/**
+	 * 找到链表的中间节点
+	 * @param head
+	 * @return
+	 */
+	public static LNode findMiddleNode(LNode head) {
+		if(head==null||head.next==null) {
+			return head;
+		}
+		LNode fast = head; //遍历链表时每次向前走两步
+		LNode slow = head; //遍历链表时每次向前走一步
+		LNode slowPre = head;
+		//当fast到达链表尾端的时候，slow恰好达到链表的中间
+		while(fast!=null&&fast.next!=null) {
+			slowPre = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+		}
+		slowPre.next = null;
+		return slow;
+	}
+	
 }

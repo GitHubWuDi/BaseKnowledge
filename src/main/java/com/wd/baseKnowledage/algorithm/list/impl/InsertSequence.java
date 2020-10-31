@@ -18,27 +18,7 @@ import com.wd.baseKnowledage.algorithm.list.model.LNode;
 public class InsertSequence {
 
 	
-	/**
-	 * 找出链表head中间节点，把链表从中间段成两个子链
-	 * @param head
-	 * @return
-	 */
-	private static LNode findMiddleNode(LNode head) {
-		if(head==null||head.next==null) {
-			return head;
-		}
-		LNode fast = head; //遍历链表时每次向前走两步
-		LNode slow = head; //遍历链表时每次向前走一步
-		LNode slowPre = head;
-		//当fast到达链表尾端的时候，slow恰好达到链表的中间
-		while(fast!=null&&fast.next!=null) {
-			slowPre = slow;
-            slow = slow.next;
-            fast = fast.next.next;
-		}
-		slowPre.next = null;
-		return slow;
-	}
+	
 	
 	
 	/**
@@ -74,7 +54,7 @@ public class InsertSequence {
 			return ;
 		}
 		LNode cur1 = head.next;   //前半部分的第一个节点
-		LNode mid = findMiddleNode(head.next); //找到中间一个节点
+		LNode mid = Util.findMiddleNode(head.next); //找到中间一个节点
 		LNode cur2 = reverse(mid); //后半部分的第一个节点
 		LNode tmp = null;
 		//合并两个节点
