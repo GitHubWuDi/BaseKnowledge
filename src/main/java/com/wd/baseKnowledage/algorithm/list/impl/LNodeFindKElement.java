@@ -75,7 +75,7 @@ public class LNodeFindKElement {
 			fast = fast.next;
 		}
 		tmp = slow;
-		slow = slow.next;
+		slow = slow.next; //②把链表断开为两个子链表，其中后半部分子链表结点的个数为k
 		tmp.next = null ; //②把链表断开为两个子链表，其中后半部分子链表结点的个数为k
 		fast.next = head.next; //③使原链表的尾结点指向链表的第一个结点
 		head.next=slow; //④使链表的头结点指向原链表倒数第k个结点。
