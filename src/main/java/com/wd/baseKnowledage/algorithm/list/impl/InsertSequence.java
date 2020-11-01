@@ -26,7 +26,7 @@ public class InsertSequence {
 	 * @param head
 	 * @return
 	 */
-	private static LNode reverse(LNode head) {
+	private static LNode reverse(LNode head){
 		if(head==null || head.next==null) {
 			return head;
 		}
