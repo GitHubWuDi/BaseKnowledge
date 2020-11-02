@@ -22,6 +22,28 @@ public class Util {
 			
 	}
 	
+	/**
+	 * 构造环形链表
+	 * @return
+	 */
+	public static LNode constructRingNode(){
+		LNode head  = new LNode();
+		head.next = null;
+		LNode tmp = null;
+		LNode cur  = head;
+		for (int i = 0; i < 8; i++) {
+			tmp = new LNode();
+			tmp.data = i;
+			tmp.next = null;
+			cur.next = tmp;
+			cur = tmp;
+		}
+		cur.next  = head.next.next.next;
+		return head;
+	}
+	
+	
+	
 	
 	/**
 	 * 找到链表的中间节点
