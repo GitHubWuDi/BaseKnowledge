@@ -28,6 +28,7 @@ public class KNodeReverse {
 		LNode pre=head;
 		LNode cur = head.next;
 		LNode next = cur.next;
+		pre.next = null;
 		
 		while(cur!=null) {
 			next =cur.next;
@@ -46,12 +47,12 @@ public class KNodeReverse {
 			return;
 		}
 		
+		int i=1;
 		LNode pre = head;
 		LNode begin = head.next;
 		LNode end = null;
 		LNode pNext = null;
 		while(begin!=null) {
-			int i=1;
 			end  = begin;
 			for (; i < k; i++) {
 				if(end.next!=null) {
@@ -62,7 +63,7 @@ public class KNodeReverse {
 			}
 			pNext = end.next;   //(2)
 			end.next = null;    //(3)
-			pre.next = reverse(head); //4,5
+			pre.next = reverse(begin); //4,5
 			begin.next = pNext; //6
 			pre = begin;  //7
 			begin = pNext; //8
