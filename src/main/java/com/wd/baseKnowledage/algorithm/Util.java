@@ -22,6 +22,25 @@ public class Util {
 			
 	}
 	
+	
+	
+	public static LNode dynamicConstructNode(int i) {
+		LNode head  = new LNode();
+		head.next = null;
+		LNode tmp = null;
+		LNode cur  = head;
+		for (; i < 8; i+=2) {
+			tmp = new LNode();
+			tmp.data = i;
+			tmp.next = null;
+			cur.next = tmp;
+			cur = tmp;
+		}
+		return head;
+			
+	}
+	
+	
 	/**
 	 * 构造环形链表
 	 * @return
