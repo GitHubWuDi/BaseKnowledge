@@ -50,7 +50,7 @@ public class RemoveNode {
 	
 	
 	/**
-	 *TODO 单链表某个结点p（非空结点），如何在p前面插入一个结点
+	 * 单链表某个结点p（非空结点），如何在p前面插入一个结点
 	 * @param p
 	 * @return
 	 */
@@ -58,11 +58,12 @@ public class RemoveNode {
 		if(p==null || p.next==null) {
 			return false; //如果结点为空，或结点p无后继结点，则无法删除
 		}
+		int value = p.data;
 		LNode tmp = p.next;
 		p.next = q;
-		q.data = p.data;
-		q.next = p;
-		p.next = tmp;
+		p.data = q.data;
+		q.data = value;
+		q.next = tmp;
 		return true;
 	}
 	
