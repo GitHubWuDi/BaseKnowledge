@@ -38,7 +38,7 @@ public class IntersectTest {
 			temp2 = temp2.next;
 			++n2;
 		}
-		if(temp1.data==temp2.data) {   //说明有相同的尾结点
+		if(temp1==temp2) {   //说明有相同的尾结点
 			if(n1>n2) {
 				while(n1-n2>0) {
 					head1 = head1.next;
