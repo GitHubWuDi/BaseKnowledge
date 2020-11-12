@@ -10,9 +10,12 @@ package com.wd.baseKnowledage.algorithm.list.impl;
 * 长链表结点先出发前进|n1-n2|步，之后两个链表同时前进，每次一步，相遇的第一点即为两个链表相交的第一个点。实现代码如下：
 */
 
-import com.wd.baseKnowledage.algorithm.Util;
 import com.wd.baseKnowledage.algorithm.list.model.LNode;
-
+/**
+ * 判断两个链表是否相交，如果相交则找出交点
+ * @author wd-pc
+ *
+ */
 public class IntersectTest {
 
 	
@@ -62,8 +65,33 @@ public class IntersectTest {
 	}
 	
 	public static void main(String[] args) {
-		LNode head1 = Util.constructNode();
-		LNode head2 = Util.constructNode();
+		int i=1;
+		LNode head1 = new LNode();
+		head1.next = null;
+		LNode head2 = new LNode();
+		head2.next = null;
+		LNode tmp = null;
+		LNode cur = head1;
+		LNode p = null;
+		for (; i < 8; i++) {
+			tmp = new LNode();
+			tmp.data = i;
+			tmp.next = null;
+			cur.next = tmp;
+			cur=tmp;
+			if(i==5) {
+				p = tmp;
+			}
+		}
+		cur = head2;
+		for (i=1; i < 5; i++) {
+			tmp = new LNode();
+			tmp.data = i;
+			tmp.next = null;
+			cur.next = tmp;
+			cur=tmp;
+		}
+		cur.next = p;
 		LNode intersect = isIntersect(head1, head2);
 		if(intersect==null) {
 			System.out.println("不存在交点");
