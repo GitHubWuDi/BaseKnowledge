@@ -78,7 +78,7 @@ public class IntersectTest {
 			tmp.data = i;
 			tmp.next = null;
 			cur.next = tmp;
-			cur=tmp;
+			cur=tmp;   //指针后移
 			if(i==5) {
 				p = tmp;
 			}
