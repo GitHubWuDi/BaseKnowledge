@@ -1,4 +1,4 @@
-package com.wd.baseKnowledage.algorithm.StackAndQueue.list;
+package com.wd.baseKnowledage.algorithm.StackAndQueue;
 /**
 * @author wudi E-mail:wudi891012@163.com
 * @version 创建时间：2020年11月15日 上午10:58:22

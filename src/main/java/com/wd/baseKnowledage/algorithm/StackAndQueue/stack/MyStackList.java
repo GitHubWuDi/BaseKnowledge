@@ -1,6 +1,6 @@
-package com.wd.baseKnowledage.algorithm.StackAndQueue.list;
+package com.wd.baseKnowledage.algorithm.StackAndQueue.stack;
 
-import com.wd.baseKnowledage.algorithm.Util;
+import com.wd.baseKnowledage.algorithm.StackAndQueue.LNode;
 
 /**
 * @author wudi E-mail:wudi891012@163.com

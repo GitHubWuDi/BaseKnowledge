@@ -1,4 +1,4 @@
-package com.wd.baseKnowledage.algorithm.StackAndQueue;
+package com.wd.baseKnowledage.algorithm.StackAndQueue.stack;
 
 import java.util.ArrayList;
 
