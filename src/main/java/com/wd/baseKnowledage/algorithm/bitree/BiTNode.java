@@ -12,4 +12,10 @@ public class BiTNode {
 	public BiTNode lchild;
 	public BiTNode rchild;
 	
+	public BiTNode() {}
+	
+	public BiTNode(int data) {
+		this.data = data;
+	}
+	
 }
