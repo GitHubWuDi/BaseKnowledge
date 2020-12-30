@@ -1,4 +1,7 @@
 package com.wd.baseKnowledage.algorithm.array;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
+
 /**
 * @author wudi E-mail:wudi891012@163.com
 * @version 创建时间：2020年12月30日 上午8:39:26
@@ -51,10 +54,38 @@ public class FindSmallK {
 		}
 	} 
 	
+	/**
+	 * 在O（N）时间复杂度内查找数组中前三名。
+	 * @param arr
+	 */
+	public static void findTop3(int[] arr) {
+		if(arr==null || arr.length<3) {
+			System.out.println("参数不合法");
+			return;
+		}
+		int r1,r2,r3;
+		r1 =r2=r3=Integer.MIN_VALUE;
+		for (int i = 0; i < arr.length; i++) {
+			if(arr[i]>r1) {
+				r3 = r2;
+				r2 = r1;
+				r1 = arr[i];
+			}else if(arr[i]>r2&&arr[i]!=r1) {
+				r3 = r2;
+				r2 = arr[i];
+			}else if(arr[i]>r3&&arr[i]!=r2) {
+				r3  =arr[i];
+			}
+		}
+		System.out.println("前三名分别为："+r1+","+r2+","+r3);
+	}
+	
 	public static void main(String[] args) {
 		int k = 3;
 		int array[] = {4,0,1,0,2,3};
+		findTop3(array);
 		System.out.println("第"+k+"小的值为："+findSmallK(array, 0, array.length-1, k));
+		
 	}
 	
 }
