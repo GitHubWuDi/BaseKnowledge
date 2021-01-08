@@ -11,6 +11,11 @@ package com.wd.baseKnowledage.algorithm.array;
 */
 public class FindArrMaxSum {
 
+	   /**
+	    * 这种方法的时间复杂度为O（N），显然效率更高，但是由于在计算的过程中额外申请了两个数组，因此，该方法的空间复杂度也为O（N）。
+	    * @param arr
+	    * @return
+	    */
 	   public static int maxSubArray1(int[] arr) {
 		   if(arr==null||arr.length<1) {
 			   System.out.println("参数不合法");
@@ -32,6 +37,7 @@ public class FindArrMaxSum {
 	   /**
 	    * 优化的动态规划方法
 	    * 方法三中每次其实只用到了 End[i-1]与 All[i-1]，而不是整个数组中的值，因此，可以定义两个变量来保存End[i-1]与All[i-1]的值，并且可以反复利用。
+	    * 时间复杂度为O（N）的基础上，把算法的空间复杂度也降到了O（1）
 	    * @param arr
 	    * @return
 	    */
