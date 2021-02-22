@@ -1,7 +1,5 @@
 package com.wd.baseKnowledage.algorithm.array;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-
 /**
 * @author wudi E-mail:wudi891012@163.com
 * @version 创建时间：2020年12月30日 上午8:39:26
