@@ -28,7 +28,19 @@ public class Add {
 		return sum;
 	}
 	
+	/**
+	 * 由于减去一个数等于加上这个数的相反数，即-n=～（n-1）=～n+1，
+	 * 因此 a-b=a+（-b）=a+（～b）+1，可以利用上面已经实现的加法操作来实现减法操作。
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public static int sub(int a,int b) {
+		return add(a,add(~b,1));
+	}
+	
+	
 	public static void main(String[] args) {
-		System.out.println(add(1000,200));
+		System.out.println(sub(1000,200));
 	}
 }
